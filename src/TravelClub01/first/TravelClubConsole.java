@@ -44,14 +44,28 @@ public class TravelClubConsole {
         }
     }
 
-    // 사용자가 처음으로 애플리케이션에 진입했을 때 보이는 화면(메뉴 출력)
+    // 사용자가 처음으로 애플리케이션에 진입했을 때 자동으로 떠야 하는 화면
+    // 명령 접수원의 메뉴 보여주기 기능 구현
     private void displayMainMenu() {
-
+        // 괄호 안의 내용을 콘솔 창으로 출력하라는 명령어 : System.out.println
+        System.out.println("");
+        System.out.println(".........................");
+        System.out.println("Travel club menu");
+        System.out.println(".........................");
+        System.out.println("1. Register");
+        System.out.println("2. Find");
+        System.out.println("3. Find all");
+        System.out.println("0. Program exit");
+        System.out.println(".........................");
     }
 
     // 사용자가 키보드로 메뉴 번호를 입력해서 메뉴를 선택했을 때 동작하는 메서드
+    // 명령 접수원의 메뉴 선택하기 기능 구현
     private int selectMainMenu() {
-        return 0;
+        System.out.print("Select number : ");
+        int menuNumber = scanner.nextInt();
+        // Scanner 의 nextInt 는 입력한 정수 값을 가져오는 메서드다. 사용자가 콘솔에서 선택한 메뉴 번호를 가져온다.
+        return menuNumber;
     }
 
 
