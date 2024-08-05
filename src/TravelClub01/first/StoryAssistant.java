@@ -10,7 +10,9 @@ public class StoryAssistant {
         createTravelClub();
     }
 
+    private void startStory() {
 
+    }
 
     // 이야기 도우미의 클럽 만들기 메서드
     // 이야기 도우미에서만 사용할 메서드인가?
