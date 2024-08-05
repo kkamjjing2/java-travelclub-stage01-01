@@ -46,4 +46,39 @@ public class TravelClubCoordinator {
         }
         return false; // if 조건문 외의 경우는 false 를 반환한다.
     }
+
+    //  이름으로 여행 클럽 찾기
+    public TravelClub find(String name) {
+        for (int i = 0; i < nextIndex; i++) {
+            if (clubs[i].getName().equals(name)) {
+                return clubs[i];
+            }
+        }
+        return null;
+    }
+
+    // 저장된 여행 클럽 모두 보여 주기
+    public TravelClub[] findAll() {
+        return Arrays.copyOf(clubs, nextIndex);
+    }
+
+    // 여행 클럽 내용 수정하기
+    public void modify(String name, String intro) {
+        if (!this.exist(name)) {
+            return;
+        }
+
+        TravelClub club = this.find(name);
+        club.setIntro(intro);
+    }
+
+    // 이름에 해당하는 여행 클럽 지우기
+    public void remove(String name) {
+        for (int i = 0; i < nextIndex; i++) {
+            if (clubs[i] != null && clubs[i].getName().equals(name)) {
+                clubs[i] = null;
+                // removeBlankInClubs(i); 이 메서드는 뭐지??
+            }
+        }
+    }
 }
